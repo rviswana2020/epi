@@ -57,4 +57,7 @@ searchList(std::shared_ptr<ListNode> head, int searchValue) {
     return head;
 }
 
+size_t
+listLength(std::shared_ptr<ListNode> head);
+
 #endif  //LIST_NODE_H

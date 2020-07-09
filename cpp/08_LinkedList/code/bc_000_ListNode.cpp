@@ -48,3 +48,16 @@ printList(std::shared_ptr<ListNode> head) {
 }
 
 //--------------------------------------------------------------------
+
+size_t 
+listLength(std::shared_ptr<ListNode> head) {
+    size_t length = 0;
+    
+    while(head) {
+        head = head->next;
+        length++;
+    }
+    return length;
+}
+
+//--------------------------------------------------------------------

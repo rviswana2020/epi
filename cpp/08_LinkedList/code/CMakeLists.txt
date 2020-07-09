@@ -25,6 +25,27 @@ add_executable(ex_002_ReverseSubList
 add_executable(ex_003_CycleDetection
                ex_003_CycleDetection.cpp bc_000_ListNode.cpp)
 
+add_executable(ex_004_OverLapNoCycle
+               ex_004_OverLapNoCycle.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_006_DeleteNodeFromList
+               ex_006_DeleteNodeFromList.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_007_RemoveKthNodeFromLast
+               ex_007_RemoveKthNodeFromLast.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_008_RemoveSortedDuplicates
+               ex_008_RemoveSortedDuplicates.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_010_EvenOddMerge
+               ex_010_EvenOddMerge.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_011_Palindrome
+               ex_011_Palindrome.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_013_AddListBasedIntegers
+               ex_013_AddListBasedIntegers.cpp bc_000_ListNode.cpp)
+
 #---------------------------------------------------------------------
 
 add_executable(vt_001_MergeDblySortedLists
@@ -49,6 +70,13 @@ add_custom_command(TARGET bc_000_ListNodeTest POST_BUILD
     COMMAND ex_001_MergeSortedList
     COMMAND ex_002_ReverseSubList
     COMMAND ex_003_CycleDetection
+    COMMAND ex_004_OverLapNoCycle
+    COMMAND ex_006_DeleteNodeFromList
+    COMMAND ex_007_RemoveKthNodeFromLast
+    COMMAND ex_008_RemoveSortedDuplicates
+    COMMAND ex_010_EvenOddMerge
+    COMMAND ex_011_Palindrome
+    COMMAND ex_013_AddListBasedIntegers
 
     COMMAND vt_001_MergeDblySortedLists
     COMMAND vt_002_ReverseList
