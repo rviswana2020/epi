@@ -9,17 +9,17 @@
 #include "bc_000_ListNode.h"
 
 void
-append(std::shared_ptr<ListNode> & head, std::shared_ptr <ListNode> &secondList) {
+append(std::shared_ptr<ListNode<int>> & head, std::shared_ptr <ListNode<int>> &secondList) {
     head->next = secondList;
     secondList = secondList->next;
 }
 
 //--------------------------------------------------------------------
 
-std::shared_ptr<ListNode>
-mergeSortedList(std::shared_ptr<ListNode> ListA, std::shared_ptr<ListNode> ListB) {
+std::shared_ptr<ListNode<int>>
+mergeSortedList(std::shared_ptr<ListNode<int>> ListA, std::shared_ptr<ListNode<int>> ListB) {
 
-    std::shared_ptr<ListNode> mergeList = std::make_shared<ListNode>(-1);
+    std::shared_ptr<ListNode<int>> mergeList = std::make_shared<ListNode<int>>(-1);
     auto tmpList = mergeList;
 
     while(ListA && ListB) {
@@ -48,8 +48,8 @@ testMergedList(std::vector<int> & vecListA, std::vector<int> & vecListB) {
             [](auto a)->void {std::cout << a << " ";});
     std::cout << std::endl;
 
-    std::shared_ptr<ListNode> ListA;
-    std::shared_ptr<ListNode> ListB;
+    std::shared_ptr<ListNode<int>> ListA;
+    std::shared_ptr<ListNode<int>> ListB;
 
     createList(ListA, vecListA);
     createList(ListB, vecListB);

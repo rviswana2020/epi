@@ -7,11 +7,11 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-deleteKthElementFromTail(std::shared_ptr<ListNode> list, int pos) {
+std::shared_ptr<ListNode<int>>
+deleteKthElementFromTail(std::shared_ptr<ListNode<int>> list, int pos) {
     assert(pos >= 1);
 
-    std::shared_ptr<ListNode> dummy = std::make_shared<ListNode>();
+    std::shared_ptr<ListNode<int>> dummy = std::make_shared<ListNode<int>>();
     dummy->next = list;
     auto delNode = dummy;
     auto fwdPtr = dummy;
@@ -38,7 +38,7 @@ deleteKthElementFromTail(std::shared_ptr<ListNode> list, int pos) {
 
 void
 testDeleteKthElementFromTail(std::vector<int> &vecList, int pos) {
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
     std::cout << "Original List:  ";
     printList(head);

@@ -9,8 +9,8 @@
 #include "bc_000_ListNode.h"
 
 bool
-recursiveChkPalindrome(std::shared_ptr<ListNode> &first,
-                       std::shared_ptr<ListNode> last) {
+recursiveChkPalindrome(std::shared_ptr<ListNode<int>> &first,
+                       std::shared_ptr<ListNode<int>> last) {
     if(last == nullptr)
         return true;
 
@@ -24,7 +24,7 @@ recursiveChkPalindrome(std::shared_ptr<ListNode> &first,
 
 //--------------------------------------------------------------------
 bool
-checkPalindrome(std::shared_ptr<ListNode> head) {
+checkPalindrome(std::shared_ptr<ListNode<int>> head) {
     auto first = head;
     auto last = head;
 
@@ -35,7 +35,7 @@ checkPalindrome(std::shared_ptr<ListNode> head) {
 
 void
 testPalindrome(std::vector<int> & vecList) {
-    std::shared_ptr<ListNode> list;
+    std::shared_ptr<ListNode<int>> list;
     createList(list, vecList);
     std::cout << "Input List: ";
     printList(list);

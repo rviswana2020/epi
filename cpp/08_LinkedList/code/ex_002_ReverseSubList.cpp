@@ -7,10 +7,10 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-reverseSubList(std::shared_ptr<ListNode> head, int start_idx, int end_idx) {
+std::shared_ptr<ListNode<int>>
+reverseSubList(std::shared_ptr<ListNode<int>> head, int start_idx, int end_idx) {
 
-    std::shared_ptr<ListNode> dummy = std::make_shared<ListNode>(-1);
+    std::shared_ptr<ListNode<int>> dummy = std::make_shared<ListNode<int>>(-1);
     dummy->next = head;
 
     auto tail = dummy;
@@ -38,7 +38,7 @@ reverseSubList(std::shared_ptr<ListNode> head, int start_idx, int end_idx) {
 
 void
 test(std::vector<int> &vecList, int start_idx, int end_idx) {
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
     std::cout << "Original List: ";
     printList(head);

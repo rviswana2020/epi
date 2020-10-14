@@ -10,11 +10,11 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-overlappingWithNoCycles(std::shared_ptr<ListNode> listA,
-                        std::shared_ptr<ListNode> listB) {
+std::shared_ptr<ListNode<int>>
+overlappingWithNoCycles(std::shared_ptr<ListNode<int>> listA,
+                        std::shared_ptr<ListNode<int>> listB) {
 
-    std::unordered_set<std::shared_ptr<ListNode>> nodesInOneListSet;
+    std::unordered_set<std::shared_ptr<ListNode<int>>> nodesInOneListSet;
 
     while(listA) {
         nodesInOneListSet.insert(listA);
@@ -33,11 +33,11 @@ overlappingWithNoCycles(std::shared_ptr<ListNode> listA,
 
 //--------------------------------------------------------------------
 
-std::shared_ptr<ListNode>
-overlappingWithNoCycles_2(std::shared_ptr<ListNode> listA,
-                          std::shared_ptr<ListNode> listB) {
+std::shared_ptr<ListNode<int>>
+overlappingWithNoCycles_2(std::shared_ptr<ListNode<int>> listA,
+                          std::shared_ptr<ListNode<int>> listB) {
 
-    std::shared_ptr<ListNode> overlappingNode = nullptr;
+    std::shared_ptr<ListNode<int>> overlappingNode = nullptr;
     bool overlappingNodeFound = false;
     while(listA && !overlappingNodeFound) {
         auto dummy = listB;
@@ -58,7 +58,7 @@ overlappingWithNoCycles_2(std::shared_ptr<ListNode> listA,
 //--------------------------------------------------------------------
 
 static void
-advanceList(std::shared_ptr<ListNode> &head, size_t cnt) {
+advanceList(std::shared_ptr<ListNode<int>> &head, size_t cnt) {
     while(head && cnt) {
         head = head->next;
         cnt--;
@@ -67,9 +67,9 @@ advanceList(std::shared_ptr<ListNode> &head, size_t cnt) {
 
 //--------------------------------------------------------------------
 
-std::shared_ptr<ListNode>
-overlappingWithNoCycles_3(std::shared_ptr<ListNode> listA,
-                          std::shared_ptr<ListNode> listB ) {
+std::shared_ptr<ListNode<int>>
+overlappingWithNoCycles_3(std::shared_ptr<ListNode<int>> listA,
+                          std::shared_ptr<ListNode<int>> listB ) {
 
     int lenA = listLength(listA);
     int lenB = listLength(listB);
@@ -92,8 +92,8 @@ testOverlapping(bool addOverlap) {
     std::vector<int> vecListA {1, 2, 3, 4, 5, 6 };
     std::vector<int> vecListB {2, 4, 8, 9, 10 };
 
-    std::shared_ptr<ListNode> listA;
-    std::shared_ptr<ListNode> listB;
+    std::shared_ptr<ListNode<int>> listA;
+    std::shared_ptr<ListNode<int>> listB;
 
     createList(listA, vecListA);
     createList(listB, vecListB);

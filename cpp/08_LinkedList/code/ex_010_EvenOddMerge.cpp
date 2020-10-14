@@ -8,11 +8,11 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-evenOddMerge(std::shared_ptr<ListNode> list) {
+std::shared_ptr<ListNode<int>>
+evenOddMerge(std::shared_ptr<ListNode<int>> list) {
 
-    std::shared_ptr<ListNode> dummyEven = std::make_shared<ListNode>(-1);
-    std::shared_ptr<ListNode> dummyOdd = std::make_shared<ListNode>(-1);
+    std::shared_ptr<ListNode<int>> dummyEven = std::make_shared<ListNode<int>>(-1);
+    std::shared_ptr<ListNode<int>> dummyOdd = std::make_shared<ListNode<int>>(-1);
 
     auto evenTail = dummyEven;
     auto oddTail = dummyOdd;
@@ -38,7 +38,7 @@ evenOddMerge(std::shared_ptr<ListNode> list) {
 
 void
 testEvenOddMerge(const std::vector<int> &vecList) {
-    std::shared_ptr<ListNode> list;
+    std::shared_ptr<ListNode<int>> list;
     createList(list, vecList);
 
     std::cout << "Given List: ";

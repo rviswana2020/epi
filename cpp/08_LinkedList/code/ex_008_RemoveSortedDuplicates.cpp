@@ -10,7 +10,7 @@
 #include "bc_000_ListNode.h"
 
 void
-removeDuplicates(std::shared_ptr<ListNode> list) {
+removeDuplicates(std::shared_ptr<ListNode<int>> list) {
     while(list && list->next) {
         while(list && list->next && list->data == list->next->data) {
             list->next = list->next->next;
@@ -23,7 +23,7 @@ removeDuplicates(std::shared_ptr<ListNode> list) {
 
 void
 testRemoveDuplicates(const std::vector<int> & vecList) {
-    std::shared_ptr<ListNode> list;
+    std::shared_ptr<ListNode<int>> list;
     createList(list, vecList);
 
     std::cout << "Given List: ";

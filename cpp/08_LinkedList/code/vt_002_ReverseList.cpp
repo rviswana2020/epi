@@ -11,10 +11,10 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-reverseList(std::shared_ptr<ListNode> head) {
+std::shared_ptr<ListNode<int>>
+reverseList(std::shared_ptr<ListNode<int>> head) {
 
-    auto dummy = std::make_shared<ListNode>(-1);
+    auto dummy = std::make_shared<ListNode<int>>(-1);
     dummy->next = head;
 
     auto curNode = dummy->next;
@@ -39,7 +39,7 @@ testReverseList(std::vector<int> & vecList) {
              [](auto a){std::cout << a << " "; });
     std::cout << std::endl;
 
-    std::shared_ptr<ListNode> inList;
+    std::shared_ptr<ListNode<int>> inList;
     createList(inList, vecList);
 
     auto reversed{reverseList(inList)};

@@ -13,11 +13,12 @@
  *ListNode
  *-------*/
 
+template<typename T>
 struct ListNode {
-    int data;
-    std::shared_ptr<ListNode> next;
+    T data;
+    std::shared_ptr<ListNode<T>> next;
 
-    ListNode(int val) : data {val}, next{nullptr} {}
+    ListNode(T val) : data {val}, next{nullptr} {}
     ListNode() : data {0}, next{nullptr} {}
 };
 
@@ -26,30 +27,30 @@ struct ListNode {
  *---*/
 
 void
-appendNode(std::shared_ptr<ListNode> &head, int val);
+appendNode(std::shared_ptr<ListNode<int>> &head, int val);
 
 void
-createList(std::shared_ptr<ListNode> &head, std::vector<int> vecList);
+createList(std::shared_ptr<ListNode<int>> &head, std::vector<int> vecList);
 
 void
-printList(std::shared_ptr<ListNode> head);
+printList(std::shared_ptr<ListNode<int>> head);
 
 inline void
-insertAfter(std::shared_ptr<ListNode> curNode, std::shared_ptr<ListNode>newNode) {
+insertAfter(std::shared_ptr<ListNode<int>> curNode, std::shared_ptr<ListNode<int>>newNode) {
     assert(curNode && newNode);
     newNode->next = curNode->next;
     curNode->next = newNode;
 }
 
 inline void
-deleteAfter(std::shared_ptr<ListNode> node) {
+deleteAfter(std::shared_ptr<ListNode<int>> node) {
     if(node && node->next) {
         node->next = node->next->next;
     }
 }
 
-inline std::shared_ptr<ListNode>
-searchList(std::shared_ptr<ListNode> head, int searchValue) {
+inline std::shared_ptr<ListNode<int>>
+searchList(std::shared_ptr<ListNode<int>> head, int searchValue) {
     while(head && head->data != searchValue) {
         head = head->next;
     }
@@ -58,6 +59,6 @@ searchList(std::shared_ptr<ListNode> head, int searchValue) {
 }
 
 size_t
-listLength(std::shared_ptr<ListNode> head);
+listLength(std::shared_ptr<ListNode<int>> head);
 
 #endif  //LIST_NODE_H

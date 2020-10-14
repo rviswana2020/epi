@@ -8,11 +8,11 @@
 #include <vector>
 #include <unordered_set>
 
-std::shared_ptr<ListNode>
-cycleDetection(std::shared_ptr<ListNode> head) {
+std::shared_ptr<ListNode<int>>
+cycleDetection(std::shared_ptr<ListNode<int>> head) {
     int cnt = 0;
     auto outerPtr = head;
-    std::shared_ptr<ListNode> cycleStart = nullptr;
+    std::shared_ptr<ListNode<int>> cycleStart = nullptr;
 
     bool cycleDetected = false;
     while(outerPtr && !cycleDetected) {
@@ -36,14 +36,14 @@ cycleDetection(std::shared_ptr<ListNode> head) {
 
 //--------------------------------------------------------------------
 
-std::shared_ptr<ListNode>
-cycleDetection2(std::shared_ptr<ListNode> head) {
+std::shared_ptr<ListNode<int>>
+cycleDetection2(std::shared_ptr<ListNode<int>> head) {
 
     if(!head)
         return nullptr;
 
-    std::shared_ptr<ListNode> cycleStartPtr = nullptr;
-    std::unordered_set<std::shared_ptr<ListNode>> visited;
+    std::shared_ptr<ListNode<int>> cycleStartPtr = nullptr;
+    std::unordered_set<std::shared_ptr<ListNode<int>>> visited;
 
     auto dummy = head;
     while(head) {
@@ -62,8 +62,8 @@ cycleDetection2(std::shared_ptr<ListNode> head) {
 
 //--------------------------------------------------------------------
 
-std::shared_ptr<ListNode>
-cycleDetection3(std::shared_ptr<ListNode> head) {
+std::shared_ptr<ListNode<int>>
+cycleDetection3(std::shared_ptr<ListNode<int>> head) {
     if(!head)
         return nullptr;
 
@@ -110,7 +110,7 @@ cycleDetection3(std::shared_ptr<ListNode> head) {
 
 void
 testCycleDetection(std::vector<int> & vecList, bool createLoop) {
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
 
     if(createLoop) {

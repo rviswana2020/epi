@@ -13,14 +13,14 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-addListBasedNums(std::shared_ptr<ListNode> listNum1,
-                 std::shared_ptr<ListNode> listNum2) {
+std::shared_ptr<ListNode<int>>
+addListBasedNums(std::shared_ptr<ListNode<int>> listNum1,
+                 std::shared_ptr<ListNode<int>> listNum2) {
 
     int sum = 0;
     int carry = 0;
 
-    std::shared_ptr<ListNode> sumListHead = std::make_shared<ListNode>(-1);
+    std::shared_ptr<ListNode<int>> sumListHead = std::make_shared<ListNode<int>>(-1);
     auto sumList = sumListHead;
 
     while(listNum1 || listNum2) {
@@ -36,14 +36,14 @@ addListBasedNums(std::shared_ptr<ListNode> listNum1,
         sum = curDigit % 10;
         carry = curDigit / 10;
 
-        sumList->next = std::make_shared<ListNode>(sum);
+        sumList->next = std::make_shared<ListNode<int>>(sum);
         listNum1 = listNum1->next;
         listNum2 = listNum2->next;
         sumList = sumList->next;
     }
 
     if(carry) {
-        sumList->next = std::make_shared<ListNode>(carry);
+        sumList->next = std::make_shared<ListNode<int>>(carry);
     }
 
     return sumListHead->next;
@@ -54,8 +54,8 @@ addListBasedNums(std::shared_ptr<ListNode> listNum1,
 void
 testAddListBasedNums(const std::vector<int> & num1,
                      const std::vector<int> & num2) {
-    std::shared_ptr<ListNode> listNum1;
-    std::shared_ptr<ListNode> listNum2;
+    std::shared_ptr<ListNode<int>> listNum1;
+    std::shared_ptr<ListNode<int>> listNum2;
 
     createList(listNum1, num1);
     createList(listNum2, num2);

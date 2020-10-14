@@ -12,10 +12,10 @@
 #include "bc_000_ListNode.h"
 
 void
-appendNode(std::shared_ptr<ListNode> &head, int val) {
+appendNode(std::shared_ptr<ListNode<int>> &head, int val) {
 
     if(head == nullptr) {
-        head = std::make_shared<ListNode>(val);
+        head = std::make_shared<ListNode<int>>(val);
         return;
     }
 
@@ -24,13 +24,13 @@ appendNode(std::shared_ptr<ListNode> &head, int val) {
     while(tmpNode && tmpNode->next) {
         tmpNode = tmpNode->next;
     }
-    tmpNode->next = std::make_shared<ListNode>(val);
+    tmpNode->next = std::make_shared<ListNode<int>>(val);
 }
 
 //--------------------------------------------------------------------
 
 void
-createList(std::shared_ptr<ListNode> &head, std::vector<int> vecList) {
+createList(std::shared_ptr<ListNode<int>> &head, std::vector<int> vecList) {
     for(auto val : vecList) {
         appendNode(head, val);
     }
@@ -39,7 +39,7 @@ createList(std::shared_ptr<ListNode> &head, std::vector<int> vecList) {
 //--------------------------------------------------------------------
 
 void
-printList(std::shared_ptr<ListNode> head) {
+printList(std::shared_ptr<ListNode<int>> head) {
     while(head) {
         std::cout << head->data  << " ";
         head = head->next;
@@ -50,7 +50,7 @@ printList(std::shared_ptr<ListNode> head) {
 //--------------------------------------------------------------------
 
 size_t 
-listLength(std::shared_ptr<ListNode> head) {
+listLength(std::shared_ptr<ListNode<int>> head) {
     size_t length = 0;
     
     while(head) {

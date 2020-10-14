@@ -7,7 +7,7 @@
 void
 testCreateList() {
     std::vector<int> vecList{1, 2, 3, 4, 5};
-    std::shared_ptr<ListNode> listA;
+    std::shared_ptr<ListNode<int>> listA;
     createList(listA, vecList);
     printList(listA);
 }
@@ -15,7 +15,7 @@ testCreateList() {
 void
 testSearchNode() {
     std::vector<int> vecList {1, 2, 3, 4, 5, 9};
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
     printList(head);
 
@@ -29,12 +29,12 @@ testSearchNode() {
 void
 testInsertAndDelete() {
     std::vector<int> vecList {1, 2, 3, 4, 5, 9};
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
     printList(head);
 
     auto searchPtr = searchList(head, 5);
-    insertAfter(searchPtr, std::make_shared<ListNode>(6));
+    insertAfter(searchPtr, std::make_shared<ListNode<int>>(6));
     printList(head);
 
     searchPtr = searchList(head, 6);

@@ -12,10 +12,10 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-reverseKSubList(std::shared_ptr<ListNode> head, int k) {
+std::shared_ptr<ListNode<int>>
+reverseKSubList(std::shared_ptr<ListNode<int>> head, int k) {
 
-    std::shared_ptr<ListNode> dummy = std::make_shared<ListNode>(-1);
+    std::shared_ptr<ListNode<int>> dummy = std::make_shared<ListNode<int>>(-1);
     dummy->next = head;
 
     auto tail = dummy;
@@ -54,7 +54,7 @@ reverseKSubList(std::shared_ptr<ListNode> head, int k) {
 
 void
 test_reverseKSubList(std::vector<int> & vecList, int k) {
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
 
     createList(head, vecList);
     std::cout << "original List: " << "k=" << k << " is: ";

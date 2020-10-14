@@ -12,8 +12,8 @@
 
 #include "bc_000_ListNode.h"
 
-std::shared_ptr<ListNode>
-detectCycle(std::shared_ptr<ListNode> head) {
+std::shared_ptr<ListNode<int>>
+detectCycle(std::shared_ptr<ListNode<int>> head) {
     if(!head)
         return nullptr;
 
@@ -43,7 +43,7 @@ detectCycle(std::shared_ptr<ListNode> head) {
 
 void
 testDetectCycle(std::vector<int> & vecList) {
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
 
     printList(head);

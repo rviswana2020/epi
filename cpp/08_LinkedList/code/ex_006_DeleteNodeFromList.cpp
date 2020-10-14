@@ -10,7 +10,7 @@
 #include "bc_000_ListNode.h"
 
 void
-deleteNodeFromList(std::shared_ptr<ListNode> delNode) {
+deleteNodeFromList(std::shared_ptr<ListNode<int>> delNode) {
         delNode->data = delNode->next->data;
         delNode->next = delNode->next->next;
 }
@@ -19,7 +19,7 @@ deleteNodeFromList(std::shared_ptr<ListNode> delNode) {
 
 void
 testDeleteANode(std::vector<int> &vecList) {
-    std::shared_ptr<ListNode> head;
+    std::shared_ptr<ListNode<int>> head;
     createList(head, vecList);
     std::cout << "original list: ";
     printList(head);
