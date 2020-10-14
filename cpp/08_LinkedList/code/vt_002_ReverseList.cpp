@@ -6,7 +6,6 @@
  *------------------------------------------------------------------*/
 
 #include <iostream>
-#include <algorithm>
 #include <vector>
 
 #include "bc_000_ListNode.h"
@@ -27,40 +26,6 @@ reverseList(std::shared_ptr<ListNode<int>> head) {
     }
 
     return dummy->next;
-}
-
-//--------------------------------------------------------------------
-
-void
-testReverseList(std::vector<int> & vecList) {
-    std::cout << "------------------------------------" << std::endl;
-    std::cout << "Given List: ";
-    for_each(begin(vecList), end(vecList),
-             [](auto a){std::cout << a << " "; });
-    std::cout << std::endl;
-
-    std::shared_ptr<ListNode<int>> inList;
-    createList(inList, vecList);
-
-    auto reversed{reverseList(inList)};
-    std::cout << "Reversed List: ";
-    printList(reversed);
-    std::cout << "------------------------------------" << std::endl;
-}
-
-//--------------------------------------------------------------------
-
-int
-main() {
-    std::vector<int> vecList {1, 13, 4, 6, 8, 9, 12};
-    testReverseList(vecList);
-
-    std::vector<int> vecListA {};
-    testReverseList(vecListA);
-
-    std::vector<int> vecListB {1};
-    testReverseList(vecListB);
-    return 0;
 }
 
 //--------------------------------------------------------------------

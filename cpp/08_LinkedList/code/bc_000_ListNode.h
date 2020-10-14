@@ -1,6 +1,6 @@
-/*------------------------------------------------------
+/*--------------------------------------------------------------------
  * Basic Singly Linked List operations
- *----------------------------------------------------*/
+ *------------------------------------------------------------------*/
 
 #ifndef LIST_NODE_H
 #define LIST_NODE_H
@@ -9,9 +9,9 @@
 #include <cassert>
 #include <vector>
 
-/*---------
- *ListNode
- *-------*/
+//--------------------------------------------------------------------
+// ListNode Type
+//--------------------------------------------------------------------
 
 template<typename T>
 struct ListNode {
@@ -22,9 +22,9 @@ struct ListNode {
     ListNode() : data {0}, next{nullptr} {}
 };
 
-/*-----
- * api
- *---*/
+//--------------------------------------------------------------------
+// api
+//--------------------------------------------------------------------
 
 void
 appendNode(std::shared_ptr<ListNode<int>> &head, int val);
@@ -32,8 +32,18 @@ appendNode(std::shared_ptr<ListNode<int>> &head, int val);
 void
 createList(std::shared_ptr<ListNode<int>> &head, std::vector<int> vecList);
 
+size_t
+listLength(std::shared_ptr<ListNode<int>> head);
+
 void
 printList(std::shared_ptr<ListNode<int>> head);
+
+void
+printVector(const std::vector<int> &vec); 
+
+//--------------------------------------------------------------------
+// inlines
+//--------------------------------------------------------------------
 
 inline void
 insertAfter(std::shared_ptr<ListNode<int>> curNode, std::shared_ptr<ListNode<int>>newNode) {
@@ -49,6 +59,8 @@ deleteAfter(std::shared_ptr<ListNode<int>> node) {
     }
 }
 
+//--------------------------------------------------------------------
+
 inline std::shared_ptr<ListNode<int>>
 searchList(std::shared_ptr<ListNode<int>> head, int searchValue) {
     while(head && head->data != searchValue) {
@@ -58,7 +70,6 @@ searchList(std::shared_ptr<ListNode<int>> head, int searchValue) {
     return head;
 }
 
-size_t
-listLength(std::shared_ptr<ListNode<int>> head);
+//--------------------------------------------------------------------
 
 #endif  //LIST_NODE_H

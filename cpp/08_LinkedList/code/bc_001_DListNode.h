@@ -1,9 +1,9 @@
 #ifndef DLISTNODE_H
 #define DLISTNODE_H
 
-/*--------------------------------------------------------
+/*--------------------------------------------------------------------
  * Doubly Linked List Definition and basic operations
- *-----------------------------------------------------*/
+ *------------------------------------------------------------------*/
 
 #include <memory>
 #include <vector>
@@ -16,10 +16,9 @@ struct DListNode {
     DListNode(int val) : data{val}, prev {nullptr}, next {nullptr} {}
 };
 
-
-/*------
- * apis
- *----*/
+/*--------------------------------------------------------------------
+ * Apis
+ *------------------------------------------------------------------*/
 
 void
 appendNode(std::shared_ptr<DListNode> &head, int value);
@@ -36,8 +35,12 @@ searchNode(std::shared_ptr<DListNode> head, int searchValue);
 void
 createList(std::shared_ptr<DListNode> &head, std::vector<int> &vecList);
 
-inline void 
-insertAfter(std::shared_ptr<DListNode> curNode, 
+/*--------------------------------------------------------------------
+ * inlines
+ *------------------------------------------------------------------*/
+
+inline void
+insertAfter(std::shared_ptr<DListNode> curNode,
             std::shared_ptr<DListNode> newNode) {
 
     newNode->next = curNode->next;
@@ -63,7 +66,7 @@ getTailNode(std::shared_ptr<DListNode> head) {
     while(head && head->next) {
         head = head->next;
     }
-    
+
     return head;
 }
 

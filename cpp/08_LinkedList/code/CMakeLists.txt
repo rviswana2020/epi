@@ -16,11 +16,11 @@ add_executable(bc_001_DListNodeTest
 
 #---------------------------------------------------------------------
 
-add_executable(ex_001_MergeSortedList
-               ex_001_MergeSortedList.cpp bc_000_ListNode.cpp)
+add_executable(ex_001_MergeSortedListTest
+               bc_000_ListNode.cpp ex_001_MergeSortedList.cpp ex_001_MergeSortedListTest.cpp)
 
-add_executable(ex_002_ReverseSubList
-               ex_002_ReverseSubList.cpp bc_000_ListNode.cpp)
+add_executable(ex_002_ReverseSubListTest
+               bc_000_ListNode.cpp ex_002_ReverseSubList.cpp ex_002_ReverseSubListTest.cpp)
 
 add_executable(ex_003_CycleDetection
                ex_003_CycleDetection.cpp bc_000_ListNode.cpp)
@@ -51,8 +51,8 @@ add_executable(ex_013_AddListBasedIntegers
 add_executable(vt_001_MergeDblySortedLists
                vt_001_MergeDblySortedLists.cpp bc_001_DListNode.cpp)
 
-add_executable(vt_002_ReverseList
-               vt_002_ReverseList.cpp bc_000_ListNode.cpp)
+add_executable(vt_002_ReverseListTest
+               bc_000_ListNode.cpp vt_002_ReverseList.cpp vt_002_ReverseListTest.cpp) 
 
 add_executable(vt_003_ReverseKSubList
                vt_003_ReverseKSubList.cpp bc_000_ListNode.cpp)
@@ -67,8 +67,8 @@ add_custom_command(TARGET bc_000_ListNodeTest POST_BUILD
     COMMAND bc_000_ListNodeTest
     COMMAND bc_001_DListNodeTest
 
-    COMMAND ex_001_MergeSortedList
-    COMMAND ex_002_ReverseSubList
+    COMMAND ex_001_MergeSortedListTest
+    COMMAND ex_002_ReverseSubListTest
     COMMAND ex_003_CycleDetection
     COMMAND ex_004_OverLapNoCycle
     COMMAND ex_006_DeleteNodeFromList
@@ -79,7 +79,7 @@ add_custom_command(TARGET bc_000_ListNodeTest POST_BUILD
     COMMAND ex_013_AddListBasedIntegers
 
     COMMAND vt_001_MergeDblySortedLists
-    COMMAND vt_002_ReverseList
+    COMMAND vt_002_ReverseListTest
     COMMAND vt_003_ReverseKSubList
     COMMAND vt_004_CycleDetection
 

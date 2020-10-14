@@ -6,7 +6,7 @@
 
 #include "bc_001_DListNode.h"
 
-void
+static void
 testCreate() {
     std::vector<int> vecList {1, 2, 3, 4, 5};
     std::shared_ptr<DListNode> head;
@@ -17,7 +17,9 @@ testCreate() {
     reversePrintList(tailNode);
 }
 
-void
+//--------------------------------------------------------------------
+
+static void
 testSearch() {
     std::vector<int> vecList {1, 2, 3, 4, 5, 6, 9};
     std::shared_ptr<DListNode> head;
@@ -30,7 +32,9 @@ testSearch() {
     assert(searchPtr == nullptr);
 }
 
-void
+//--------------------------------------------------------------------
+
+static void
 testInsertAndDelete() {
     std::vector<int> vecList {1, 2, 3, 4, 5, 6, 9};
     std::shared_ptr<DListNode> head;
@@ -52,6 +56,7 @@ testInsertAndDelete() {
     reversePrintList(searchPtr);
 }
 
+//--------------------------------------------------------------------
 
 int
 main() {
@@ -61,3 +66,5 @@ main() {
 
     return 0;
 }
+
+//--------------------------------------------------------------------

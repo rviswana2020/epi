@@ -8,6 +8,7 @@
  *------------------------------------------------------------------*/
 
 #include <iostream>
+#include <algorithm>
 
 #include "bc_000_ListNode.h"
 
@@ -38,6 +39,19 @@ createList(std::shared_ptr<ListNode<int>> &head, std::vector<int> vecList) {
 
 //--------------------------------------------------------------------
 
+size_t
+listLength(std::shared_ptr<ListNode<int>> head) {
+    size_t length = 0;
+
+    while(head) {
+        head = head->next;
+        length++;
+    }
+    return length;
+}
+
+//--------------------------------------------------------------------
+
 void
 printList(std::shared_ptr<ListNode<int>> head) {
     while(head) {
@@ -49,15 +63,13 @@ printList(std::shared_ptr<ListNode<int>> head) {
 
 //--------------------------------------------------------------------
 
-size_t 
-listLength(std::shared_ptr<ListNode<int>> head) {
-    size_t length = 0;
-    
-    while(head) {
-        head = head->next;
-        length++;
-    }
-    return length;
+void
+printVector(const std::vector<int> & vec) {
+    std::for_each(begin(vec), end(vec),
+                    [](auto a) {
+                                   std::cout << a << " ";
+                               });
+    std::cout << std::endl;
 }
 
 //--------------------------------------------------------------------

@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------------
  * Doubly Linked List Definition and basic operations
  *------------------------------------------------------------------*/
+
 #include <iostream>
 
 #include "bc_001_DListNode.h"
@@ -60,7 +61,6 @@ searchNode(std::shared_ptr<DListNode> head, int searchValue) {
 
 void
 createList(std::shared_ptr<DListNode>& head, std::vector<int> &vecList) {
-    
     for(auto entry: vecList) {
         appendNode(head, entry);
     }
