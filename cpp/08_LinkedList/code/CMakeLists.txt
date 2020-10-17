@@ -22,32 +22,30 @@ add_executable(ex_001_MergeSortedListTest
 add_executable(ex_002_ReverseSubListTest
                bc_000_ListNode.cpp ex_002_ReverseSubList.cpp ex_002_ReverseSubListTest.cpp)
 
-add_executable(ex_003A_CycleDetection
+add_executable(ex_003A_CycleDetectionTest
                bc_000_ListNode.cpp ex_003A_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
-add_executable(ex_003B_CycleDetection
+add_executable(ex_003B_CycleDetectionTest
                bc_000_ListNode.cpp ex_003B_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
-add_executable(ex_003C_CycleDetection
+add_executable(ex_003C_CycleDetectionTest
                bc_000_ListNode.cpp ex_003C_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
-add_executable(ex_003D_CycleDetection
+add_executable(ex_003D_CycleDetectionTest
                bc_000_ListNode.cpp ex_003D_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
 
-
-add_executable(ex_004A_OverLapNoCycle
+add_executable(ex_004A_OverLapNoCycleTest
                 bc_000_ListNode.cpp ex_004A_OverLapNoCycle.cpp ex_004_OverLapNoCycleTest.cpp)
-add_executable(ex_004B_OverLapNoCycle
+add_executable(ex_004B_OverLapNoCycleTest
                 bc_000_ListNode.cpp ex_004B_OverLapNoCycle.cpp ex_004_OverLapNoCycleTest.cpp)
-add_executable(ex_004C_OverLapNoCycle
+add_executable(ex_004C_OverLapNoCycleTest
                 bc_000_ListNode.cpp ex_004C_OverLapNoCycle.cpp ex_004_OverLapNoCycleTest.cpp)
 
-
-add_executable(ex_006_DeleteNodeFromList
+add_executable(ex_006_DeleteNodeFromListTest
                bc_000_ListNode.cpp ex_006_DeleteNodeFromList.cpp ex_006_DeleteNodeFromListTest.cpp) 
 
-add_executable(ex_007_RemoveKthNodeFromLast
+add_executable(ex_007_RemoveKthNodeFromLastTest
                bc_000_ListNode.cpp ex_007_RemoveKthNodeFromLast.cpp ex_007_RemoveKthNodeFromLastTest.cpp)
 
-add_executable(ex_008_RemoveSortedDuplicates
-               ex_008_RemoveSortedDuplicates.cpp bc_000_ListNode.cpp)
+add_executable(ex_008_RemoveSortedDuplicatesTest
+                bc_000_ListNode.cpp ex_008_RemoveSortedDuplicates.cpp ex_008_RemoveSortedDuplicatesTest.cpp)
 
 add_executable(ex_010_EvenOddMerge
                ex_010_EvenOddMerge.cpp bc_000_ListNode.cpp)
@@ -82,18 +80,18 @@ add_custom_command(TARGET bc_000_ListNodeTest POST_BUILD
     COMMAND ex_001_MergeSortedListTest
     COMMAND ex_002_ReverseSubListTest
 
-    COMMAND ex_003A_CycleDetection
-    COMMAND ex_003B_CycleDetection
-    COMMAND ex_003C_CycleDetection
-    COMMAND ex_003D_CycleDetection
+    COMMAND ex_003A_CycleDetectionTest
+    COMMAND ex_003B_CycleDetectionTest
+    COMMAND ex_003C_CycleDetectionTest
+    COMMAND ex_003D_CycleDetectionTest
 
-    COMMAND ex_004A_OverLapNoCycle
-    COMMAND ex_004B_OverLapNoCycle
-    COMMAND ex_004C_OverLapNoCycle
+    COMMAND ex_004A_OverLapNoCycleTest
+    COMMAND ex_004B_OverLapNoCycleTest
+    COMMAND ex_004C_OverLapNoCycleTest
 
-    COMMAND ex_006_DeleteNodeFromList
-    COMMAND ex_007_RemoveKthNodeFromLast
-    COMMAND ex_008_RemoveSortedDuplicates
+    COMMAND ex_006_DeleteNodeFromListTest
+    COMMAND ex_007_RemoveKthNodeFromLastTest
+    COMMAND ex_008_RemoveSortedDuplicatesTest
     COMMAND ex_010_EvenOddMerge
     COMMAND ex_011_Palindrome
     COMMAND ex_013_AddListBasedIntegers

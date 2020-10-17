@@ -9,42 +9,23 @@
 
 #include "bc_000_ListNode.h"
 
-void
-removeDuplicates(std::shared_ptr<ListNode<int>> list) {
-    while(list && list->next) {
-        while(list && list->next && list->data == list->next->data) {
-            list->next = list->next->next;
+//--------------------------------------------------------------------
+
+std::shared_ptr<ListNode<int>> RemoveDuplicates(const std::shared_ptr<ListNode<int>>& L) {
+    auto iter = L;
+
+    while(iter) {
+        auto next_distinct = iter->next;
+
+        while(next_distinct && next_distinct->data == iter->data) {
+            next_distinct = next_distinct->next;
         }
-        list = list->next;
+
+        iter->next = next_distinct;
+        iter = next_distinct;
     }
-}
 
-//--------------------------------------------------------------------
-
-void
-testRemoveDuplicates(const std::vector<int> & vecList) {
-    std::shared_ptr<ListNode<int>> list;
-    createList(list, vecList);
-
-    std::cout << "Given List: ";
-    printList(list);
-
-    removeDuplicates(list);
-
-    std::cout << "After removing duplicates: ";
-    printList(list);
-    std::cout << "------------------------------------" << std::endl;
-}
-
-//--------------------------------------------------------------------
-
-int
-main() {
-    testRemoveDuplicates({2, 2, 2, 2, 3, 4, 5, 6, 6});
-    testRemoveDuplicates({2, 2, 2, 2 });
-    testRemoveDuplicates({2, 2 });
-    testRemoveDuplicates({2 });
-    return 0;
+    return L;
 }
 
 //--------------------------------------------------------------------
