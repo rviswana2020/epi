@@ -22,8 +22,15 @@ add_executable(ex_001_MergeSortedListTest
 add_executable(ex_002_ReverseSubListTest
                bc_000_ListNode.cpp ex_002_ReverseSubList.cpp ex_002_ReverseSubListTest.cpp)
 
-add_executable(ex_003_CycleDetection
-               ex_003_CycleDetection.cpp bc_000_ListNode.cpp)
+add_executable(ex_003A_CycleDetection
+               bc_000_ListNode.cpp ex_003A_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+add_executable(ex_003B_CycleDetection
+               bc_000_ListNode.cpp ex_003B_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+add_executable(ex_003C_CycleDetection
+               bc_000_ListNode.cpp ex_003C_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+add_executable(ex_003D_CycleDetection
+               bc_000_ListNode.cpp ex_003D_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+
 
 add_executable(ex_004_OverLapNoCycle
                ex_004_OverLapNoCycle.cpp bc_000_ListNode.cpp)
@@ -69,7 +76,12 @@ add_custom_command(TARGET bc_000_ListNodeTest POST_BUILD
 
     COMMAND ex_001_MergeSortedListTest
     COMMAND ex_002_ReverseSubListTest
-    COMMAND ex_003_CycleDetection
+
+    COMMAND ex_003A_CycleDetection
+    COMMAND ex_003B_CycleDetection
+    COMMAND ex_003C_CycleDetection
+    COMMAND ex_003D_CycleDetection
+
     COMMAND ex_004_OverLapNoCycle
     COMMAND ex_006_DeleteNodeFromList
     COMMAND ex_007_RemoveKthNodeFromLast

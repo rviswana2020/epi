@@ -8,7 +8,7 @@
 #include <iostream>
 
 extern std::shared_ptr<ListNode<int>>
-mergeSortedList(std::shared_ptr<ListNode<int>> ListA, std::shared_ptr<ListNode<int>> ListB);
+MergeTwoSortedLists(std::shared_ptr<ListNode<int>> ListA, std::shared_ptr<ListNode<int>> ListB);
 
 void
 testMergedList(std::vector<int> & vecListA, std::vector<int> & vecListB) {
@@ -25,7 +25,7 @@ testMergedList(std::vector<int> & vecListA, std::vector<int> & vecListB) {
     createList(ListA, vecListA);
     createList(ListB, vecListB);
 
-    auto mergedList = mergeSortedList(ListA, ListB);
+    auto mergedList = MergeTwoSortedLists(ListA, ListB);
 
     std::cout << "merged List: ";
     printList(mergedList);

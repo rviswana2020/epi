@@ -18,6 +18,7 @@ struct ListNode {
     T data;
     std::shared_ptr<ListNode<T>> next;
 
+    ListNode(T val, std::shared_ptr<ListNode<T>> nextPtr) : data {val}, next{nextPtr} {}
     ListNode(T val) : data {val}, next{nullptr} {}
     ListNode() : data {0}, next{nullptr} {}
 };
