@@ -8,30 +8,29 @@
 #include "bc_000_ListNode.h"
 
 std::shared_ptr<ListNode<int>>
-reverseSubList(std::shared_ptr<ListNode<int>> head, int start_idx, int end_idx) {
+ReverseSublist(std::shared_ptr<ListNode<int>> L, int start, int finish) {
+    if(start == finish)
+        return L;
 
-    std::shared_ptr<ListNode<int>> dummy = std::make_shared<ListNode<int>>(-1);
-    dummy->next = head;
+    auto dummyHead{ std::make_shared<ListNode<int>>(0, L)};
+    auto sublistHead {dummyHead};
 
-    auto tail = dummy;
-    int numReverse = end_idx - start_idx;
-
-    while(start_idx > 1 && tail) {
-        tail = tail->next;
-        start_idx--;
+    int k = 1;
+    while(k < start) {
+        sublistHead = sublistHead->next;
+        k++;
     }
 
-    auto curNode = tail->next;
-
-    while(curNode && curNode->next && numReverse> 0) {
+    auto curNode = sublistHead->next;
+    while((start != finish) && curNode && curNode->next) {
         auto nextNode = curNode->next;
         curNode->next = nextNode->next;
-        nextNode->next = tail->next;
-        tail->next = nextNode;
-        numReverse--;
+        nextNode->next = sublistHead->next;
+        sublistHead->next = nextNode;
+        start++;
     }
 
-    return dummy->next;
+    return dummyHead->next;
 }
 
 //--------------------------------------------------------------------

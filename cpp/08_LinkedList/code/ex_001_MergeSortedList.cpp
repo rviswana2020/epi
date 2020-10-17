@@ -5,29 +5,30 @@
 
 #include "bc_000_ListNode.h"
 
-static void
-append(std::shared_ptr<ListNode<int>> & head, std::shared_ptr <ListNode<int>> &secondList) {
-    head->next = secondList;
-    secondList = secondList->next;
+#include <memory>
+
+void
+AppendNode(std::shared_ptr<ListNode<int>>& node, std::shared_ptr<ListNode<int>> & tail) {
+	tail->next = node;
+	tail = tail->next;
+
+	node = node->next;
 }
 
 //--------------------------------------------------------------------
 
-std::shared_ptr<ListNode<int>>
-mergeSortedList(std::shared_ptr<ListNode<int>> ListA, std::shared_ptr<ListNode<int>> ListB) {
+std::shared_ptr<ListNode<int>> 
+MergeTwoSortedLists(std::shared_ptr<ListNode<int>> L1,
+                    std::shared_ptr<ListNode<int>> L2) {
+	auto dummyHead{ std::make_shared<ListNode<int>>(0, nullptr)};
+	auto tail = dummyHead;
 
-    std::shared_ptr<ListNode<int>> mergeList = std::make_shared<ListNode<int>>(-1);
-    auto tmpList = mergeList;
+	while(L1 && L2) {
+		AppendNode(L1->data < L2->data ? L1 : L2, tail);
+	}
+	tail->next = L1 ? L1 : L2;
 
-    while(ListA && ListB) {
-       append(tmpList,
-              ListA->data < ListB->data ? ListA : ListB);
-       tmpList = tmpList->next;
-    }
-
-    tmpList->next = ListA ? ListA : ListB;
-
-    return mergeList->next;
-}
+	return dummyHead->next;
+}	
 
 //--------------------------------------------------------------------

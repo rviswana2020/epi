@@ -8,7 +8,7 @@
 #include "bc_000_ListNode.h"
 
 extern std::shared_ptr<ListNode<int>>
-reverseSubList(std::shared_ptr<ListNode<int>> head, int start_idx, int end_idx);
+ReverseSublist(std::shared_ptr<ListNode<int>> head, int start_idx, int end_idx);
 
 void
 test(std::vector<int> &vecList, int start_idx, int end_idx) {
@@ -17,7 +17,7 @@ test(std::vector<int> &vecList, int start_idx, int end_idx) {
     std::cout << "Original List: ";
     printList(head);
 
-    auto reversed = reverseSubList(head, start_idx, end_idx);
+    auto reversed = ReverseSublist(head, start_idx, end_idx);
     std::cout << "Reversed sublist from "
               << start_idx << " to " << end_idx << ": ";
     printList(reversed);

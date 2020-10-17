@@ -14,32 +14,3 @@ deleteNodeFromList(std::shared_ptr<ListNode<int>> delNode) {
         delNode->data = delNode->next->data;
         delNode->next = delNode->next->next;
 }
-
-//--------------------------------------------------------------------
-
-void
-testDeleteANode(std::vector<int> &vecList) {
-    std::shared_ptr<ListNode<int>> head;
-    createList(head, vecList);
-    std::cout << "original list: ";
-    printList(head);
-
-    auto getNodeFromList = searchList(head, 5);
-    assert(getNodeFromList != nullptr);
-
-    deleteNodeFromList(getNodeFromList);
-
-    std::cout << "list after deletion: ";
-    printList(head);
-}
-
-//--------------------------------------------------------------------
-
-int main() {
-    std::vector<int> vecList {1, 2, 3, 4, 5, 6, 7, 9};
-
-    testDeleteANode(vecList);
-    return 0;
-}
-
-//--------------------------------------------------------------------

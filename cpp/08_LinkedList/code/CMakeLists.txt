@@ -22,17 +22,29 @@ add_executable(ex_001_MergeSortedListTest
 add_executable(ex_002_ReverseSubListTest
                bc_000_ListNode.cpp ex_002_ReverseSubList.cpp ex_002_ReverseSubListTest.cpp)
 
-add_executable(ex_003_CycleDetection
-               ex_003_CycleDetection.cpp bc_000_ListNode.cpp)
+add_executable(ex_003A_CycleDetection
+               bc_000_ListNode.cpp ex_003A_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+add_executable(ex_003B_CycleDetection
+               bc_000_ListNode.cpp ex_003B_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+add_executable(ex_003C_CycleDetection
+               bc_000_ListNode.cpp ex_003C_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
+add_executable(ex_003D_CycleDetection
+               bc_000_ListNode.cpp ex_003D_CycleDetection.cpp ex_003_CycleDetectionTest.cpp)
 
-add_executable(ex_004_OverLapNoCycle
-               ex_004_OverLapNoCycle.cpp bc_000_ListNode.cpp)
+
+add_executable(ex_004A_OverLapNoCycle
+                bc_000_ListNode.cpp ex_004A_OverLapNoCycle.cpp ex_004_OverLapNoCycleTest.cpp)
+add_executable(ex_004B_OverLapNoCycle
+                bc_000_ListNode.cpp ex_004B_OverLapNoCycle.cpp ex_004_OverLapNoCycleTest.cpp)
+add_executable(ex_004C_OverLapNoCycle
+                bc_000_ListNode.cpp ex_004C_OverLapNoCycle.cpp ex_004_OverLapNoCycleTest.cpp)
+
 
 add_executable(ex_006_DeleteNodeFromList
-               ex_006_DeleteNodeFromList.cpp bc_000_ListNode.cpp)
+               bc_000_ListNode.cpp ex_006_DeleteNodeFromList.cpp ex_006_DeleteNodeFromListTest.cpp) 
 
 add_executable(ex_007_RemoveKthNodeFromLast
-               ex_007_RemoveKthNodeFromLast.cpp bc_000_ListNode.cpp)
+               bc_000_ListNode.cpp ex_007_RemoveKthNodeFromLast.cpp ex_007_RemoveKthNodeFromLastTest.cpp)
 
 add_executable(ex_008_RemoveSortedDuplicates
                ex_008_RemoveSortedDuplicates.cpp bc_000_ListNode.cpp)
@@ -69,8 +81,16 @@ add_custom_command(TARGET bc_000_ListNodeTest POST_BUILD
 
     COMMAND ex_001_MergeSortedListTest
     COMMAND ex_002_ReverseSubListTest
-    COMMAND ex_003_CycleDetection
-    COMMAND ex_004_OverLapNoCycle
+
+    COMMAND ex_003A_CycleDetection
+    COMMAND ex_003B_CycleDetection
+    COMMAND ex_003C_CycleDetection
+    COMMAND ex_003D_CycleDetection
+
+    COMMAND ex_004A_OverLapNoCycle
+    COMMAND ex_004B_OverLapNoCycle
+    COMMAND ex_004C_OverLapNoCycle
+
     COMMAND ex_006_DeleteNodeFromList
     COMMAND ex_007_RemoveKthNodeFromLast
     COMMAND ex_008_RemoveSortedDuplicates
