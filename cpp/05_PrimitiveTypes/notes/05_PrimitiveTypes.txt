@@ -1,0 +1,311 @@
+RVCMTBEGIN
+Title and Footer:
+-----------------
+RVHTMLHEADER~Crash Course C++ ~ Crash Course C++
+RVHTMLFOOTER
+
+Headers:
+--------
+RVH2~Header
+RVH3~Header
+RVH4~Header
+
+Paragraph:
+----------
+RVPARABEGIN
+RVPARAEND
+
+List:
+-----
+RVLISTBEGIN
+RVPOINT
+RVLISTEND
+
+PrintASItis:
+------------
+RVPREBEGIN
+RVPREEND
+
+Image:
+------
+RVIMG~CH2_LiteralType.png~Literal Type overrides~480~360
+RVIMG~CH2_LiteralType.png~Literal Type overrides~480~360
+
+BOLD:
+------
+<em><strong>Classname</strong></em>
+<span class="line-heading">Class Members</span>
+
+
+CODE:
+-----
+RVCODE~BAS_CH01_002_Sum.cpp
+
+
+Table:
+------
+RVTABLE~MemoryDifference.txt
+
+Link:
+-----
+RVLINK
+
+RVH4~Boot Camp Problem
+RVH5~Problem Statement
+	RVPARABEGIN
+	RVPARAEND
+
+RVH5~Approach
+	RVPARABEGIN
+	RVPARAEND
+
+RVH5~Implementation
+	RVPARABEGIN
+	RVPARAEND
+
+RVH5~Complexity Analysis
+	RVPARABEGIN
+	RVPARAEND
+
+RVH5~Possible Improvements
+	RVPARABEGIN
+	RVPARAEND
+
+RVCMTEND
+
+RVHTMLHEADER~Primitive Types ~ Primitive Types
+RVH2~Primitive Types
+RVH3~Boot Camp
+RVH4~Intro
+	RVLISTBEGIN
+		A program updates variables in memory according to its instruction.
+	RVPOINT
+		Variables comes in Types.  A type is a classification of data that spells out
+		RVLISTBEGIN
+			Possible values for that type
+		RVPOINT
+			Operations that can be performed on vairables of that type.
+		RVLISTEND
+	RVPOINT
+		A type can be provided by the language or defined by the programmer.
+	RVPOINT
+		Many languages provide types for very primitive data types.
+		RVLISTBEGIN
+			Boolean
+		RVPOINT
+			Character
+		RVPOINT
+			Integers
+		RVPOINT
+			Floating point data
+		RVLISTEND
+	RVPOINT
+		Often there are multiple integer and floating point types.  They depend on
+		RVLISTBEGIN
+			Signedness
+		RVPOINT
+			Precision
+		RVLISTEND
+	RVPOINT
+		Width of these types(integer and floating point) is the number of bits of storage a corresponding variable takes in memory.  For example, most implementations of C++ use 32 or 64 bits for an int while in JAVA, an int is always 32 bits.
+	RVLISTEND
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVH4~Boot Camp Problem
+RVH5~Problem Statement
+	RVPARABEGIN
+		Write a program to count the number of bits set to 1 in an integer.
+	RVPARAEND
+
+RVH5~Approach
+	RVPARABEGIN
+	We can use shifting to remove LSB bit and masking to get LSB bit.
+	RVPARAEND
+
+RVH5~Cornercases
+	RVPARABEGIN
+	It is important to use unsigned int since shifting can be arithmatic for negative numbers.
+	RVPARAEND
+
+RVH5~Implementation
+	RVCODE~bc_001_CountBits.cc
+
+RVH5~Complexity Analysis
+	RVLISTBEGIN
+	We perform O(1) computation per bit.  Time complexity is O(n), since there are n bits in the integer word.
+	RVPOINT
+	Note that we compute time complexity for worst case input. In this case, it is for input integer with all bits set.  The best case time complexity is 0 since no bit is set.
+
+	Space complexity is O(1).
+	RVLISTEND
+
+RVH5~Possible Improvements
+	RVPARABEGIN
+	We could reduce the time complexity to number of bits set in an integer word.  We can use x & (x-1) trick to reset last set bit.  
+	RVPARAEND
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVH3~Parity
+RVH4~ Problem Statement
+	RVPARABEGIN
+	The parity of a binary word is 1 if the number of 1s in the word is odd. Otherwise it is 0.  Parity checks are used to detect single bit errors in data storage and communication.  Example: Parity of 0xa is 0 since two bits are set.  Compute parity of a very large number of 64-bit words.
+	RVPARAEND
+
+RVH4~Approach
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Corner case
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Implementation
+	RVCODE~ex_001A_Parity.cc
+
+RVH4~Complexity Analysis
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Possible Improvements 1
+RVH4~Notes
+RVH4~Implementation
+	RVCODE~ex_001B_Parity.cc
+
+RVH4~Possible Improvements 2
+RVH4~Notes
+RVH4~Implementation
+	RVCODE~ex_001C_Parity.cc
+
+RVH4~Possible Improvements 3
+RVH4~Notes
+RVH4~Implementation
+	RVCODE~ex_001D_Parity.cc
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVH3~Swap Bits
+RVH4~ Problem Statement
+	RVPARABEGIN
+	A 64-bit integer can be viewed as an array of 64 bits, with the bit at index 0 corresponding to least significant bit(LBS) and the bit 63 corresponding to most significant bit(MS).  Implement code that takes as input a 64-bit integer and swaps the bits at indices i and j.
+	
+	RVPARAEND
+
+RVH4~Approach
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Corner case
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Implementation
+	RVCODE~ex_002_SwapBits.cc
+
+RVH4~Complexity Analysis
+	RVPARABEGIN
+	RVPARAEND
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVH3~Reverse Bits
+RVH4~ Problem Statement
+	RVPARABEGIN
+	
+	RVPARAEND
+
+RVH4~Approach
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Corner case
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Implementation
+	RVCODE~ex_003_ReverseBits.cc
+
+RVH4~Complexity Analysis
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Possible Improvements 1
+RVH4~Notes
+RVH4~Implementation
+RVCODE~ex_003B_ReverseBits.cc
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVH3~Find a closest integer with same weight
+RVH4~ Problem Statement
+	RVPARABEGIN
+	
+	RVPARAEND
+
+RVH4~Approach
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Corner case
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Implementation
+	RVCODE~ex_004_ClosestIntWithSameWeight.cc
+
+RVH4~Complexity Analysis
+	RVPARABEGIN
+	RVPARAEND
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVH3~
+RVH4~ Problem Statement
+	RVPARABEGIN
+	
+	RVPARAEND
+
+RVH4~Approach
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Corner case
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Implementation
+
+RVH4~Complexity Analysis
+	RVPARABEGIN
+	RVPARAEND
+
+RVH4~Possible Improvements 1
+RVH4~Notes
+RVH4~Implementation
+
+RVH4~Possible Improvements 2
+RVH4~Notes
+RVH4~Implementation
+
+RVH4~Possible Improvements 3
+RVH4~Notes
+RVH4~Implementation
+
+RVCMTBEGIN
+----------------------------------------------------------------------------------
+RVCMTEND
+
+RVHTMLFOOTER
